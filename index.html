@@ -34,8 +34,261 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="startPage" class="card fade">
+    <div class="container" id="app">
+        <!-- 内容由JS生成 -->
+    </div>
+<script>
+var questions=[
+{title:"乾符五年，黄巢率军转战各地，宣称「天补均平」，要均贫富、等贵贱。你作为布衣，家乡遭旱灾，父母饿死。黄巢人马即将到来，宣称「开仓赈济、杀尽豪强」。你会：",options:[
+{text:"A. 立即加入！不反没有活路，宁可战死讨公道",scores:{Rebel:5,Mobilization:3,Morality:2,Survival:1}},
+{text:"B. 同情黄巢但认为不对，逃往他处",scores:{Survival:4,Morality:1,Rebel:-2}},
+{text:"C. 向豪强告密，换取粮食",scores:{Kill:3,Pragmatism:2,Morality:-3}},
+{text:"D. 组织乡民自保，不投任何一方",scores:{Mobilization:4,Survival:3,Pragmatism:2,Rebel:-1}},
+{text:"E. 认为黄巢也会鱼肉百姓，隐忍等待",scores:{Pragmatism:3,Morality:1,Rebel:-1}}
+]},
+{title:"黄巢攻入长安，僖宗逃往成都。凤翔节度使郑畋歃血为盟，誓死勤王。你作为帐下小将，你会：",options:[
+{text:"A. 第一个响应，誓死追随",scores:{Authority:5,Military:3,Morality:3,Rebel:-2}},
+{text:"B. 敬佩但认为时机未到，先巩固凤翔",scores:{Military:3,Pragmatism:3,Authority:1}},
+{text:"C. 认为唐室气数已尽，劝郑畋拥兵自重",scores:{Rebel:4,Pragmatism:3,Authority:-3}},
+{text:"D. 暗中联络黄巢，愿投降换富贵",scores:{Kill:3,Rebel:3,Morality:-4,Survival:2}},
+{text:"E. 建议上表立太子监国，联络各藩镇共讨",scores:{Politics:4,Mobilization:3,Rule:2}}
+]},
+{title:"黄巢败亡于泰山狼虎谷。其外甥林言劝黄巢自刎。你作为黄巢帐下最后的亲兵，目睹这一幕，你会：",options:[
+{text:"A. 趁他不备刺杀，取首级投降",scores:{Kill:4,Survival:4,Morality:-4,Rebel:-3}},
+{text:"B. 护在黄巢身前，与林言对峙",scores:{Morality:3,Survival:-4,Military:2,Authority:2}},
+{text:"C. 跪地痛哭，劝黄巢自刎以全名节",scores:{Morality:4,Survival:-3,Rebel:2,Kill:2}},
+{text:"D. 趁乱逃走，既不背叛也不陪他送死",scores:{Survival:5,Morality:-1,Rebel:1}},
+{text:"E. 提议护送黄巢突围",scores:{Military:3,Survival:2,Morality:2,Pragmatism:-2}}
+]},
+{title:"李克用被困邢州，粮草断绝。你作为帐中小校，看管俘虏十人。李克用传令：「尔等自行处置俘虏。」面对这十名俘虏，你会：",options:[
+{text:"A. 毫不犹豫斩杀分食",scores:{Kill:5,Survival:4,Morality:-4,Military:2}},
+{text:"B. 只杀半数，留半数作为后备粮",scores:{Politics:3,Pragmatism:3,Kill:3,Morality:-2}},
+{text:"C. 只杀两人儆众，其余放走",scores:{Morality:3,Rule:2,Rebel:2,Military:-2}},
+{text:"D. 偷偷放走所有俘虏",scores:{Morality:5,Survival:-3,Rebel:3,Kill:-3}},
+{text:"E. 向李克用进言，借粮而非杀俘",scores:{Politics:4,Mobilization:2,Pragmatism:2,Morality:2}}
+]},
+{title:"杨行密据扬州，城内粮尽，米价飞涨。你作为扬州百姓，家中已无隔夜之粮，你会：",options:[
+{text:"A. 组织饥民冲击富户粮仓",scores:{Rebel:4,Mobilization:3,Survival:3,Rule:-3}},
+{text:"B. 向杨行密请愿，先赈济百姓",scores:{Mobilization:3,Morality:2,Pragmatism:-1}},
+{text:"C. 建议向周边借粮，来年加倍奉还",scores:{Politics:3,Pragmatism:3,Rule:2}},
+{text:"D. 为生存，将自己卖为奴婢",scores:{Survival:4,Pragmatism:2,Rebel:-2}},
+{text:"E. 暗中联络富户，做内应换取粮食",scores:{Politics:3,Survival:2,Morality:-2}}
+]},
+{title:"钱镠欲扩建杭州城，需征发民夫十万。时值农忙。你作为杭州百姓，家有五亩薄田，你会：",options:[
+{text:"A. 主动报名筑城，「国若不在，家何存」",scores:{Mobilization:5,Military:2,Morality:2,Survival:1}},
+{text:"B. 建议只征无地游民，有田者继续耕种",scores:{Politics:3,Pragmatism:3,Mobilization:1}},
+{text:"C. 偷偷逃亡，保全自家田地",scores:{Survival:4,Rebel:2,Mobilization:-3}},
+{text:"D. 组织乡民请愿，延后筑城",scores:{Mobilization:3,Rule:2,Pragmatism:1}},
+{text:"E. 建议以工代赈，给民夫发钱粮",scores:{Politics:4,Mobilization:3,Pragmatism:2}}
+]},
+{title:"朱温已控制唐廷。谋士李振进言：「此辈自谓清流，宜投之黄河，使为浊流！」一夜杀尽清流。你作为朱温帐下谋士，面对这场屠杀，你会：",options:[
+{text:"A. 进言附和，这些清流该杀",scores:{Kill:5,Rebel:2,Morality:-3,Pragmatism:3}},
+{text:"B. 沉默旁观，明哲保身",scores:{Survival:4,Authority:2,Morality:-1}},
+{text:"C. 冒险进言，劝只诛首恶",scores:{Morality:3,Politics:2,Survival:-2}},
+{text:"D. 借故离营，内心已萌去意",scores:{Morality:2,Rebel:2,Survival:1,Authority:-3}},
+{text:"E. 暗中通知裴枢等人逃走",scores:{Morality:4,Rebel:3,Survival:-4,Pragmatism:-2}}
+]},
+{title:"李克用病危，以箭授李存勖：「梁，吾仇也……此三者，吾遗恨也。与尔三矢，尔其无忘乃父之志！」你作为李存勖的伴读，亲眼见证这一幕，你对这三支箭的看法是：",options:[
+{text:"A. 必须遵从！完成这三件大事",scores:{Authority:5,Military:3,Morality:2,Rebel:-3}},
+{text:"B. 先王遗命重要，但时移世易，不必拘泥",scores:{Pragmatism:4,Authority:1,Rule:-1}},
+{text:"C. 表面遵从，暗中积蓄实力",scores:{Politics:4,Pragmatism:3,Military:1}},
+{text:"D. 认为李克用不该把恩怨强加于儿子",scores:{Rebel:4,Authority:-3,Morality:1}},
+{text:"E. 将三箭供于宗庙，作为激励将士的象征",scores:{Mobilization:3,Pragmatism:2,Authority:1}}
+]},
+{title:"后梁大将王景仁率八万精兵攻赵，晋王李存勖率三万驰援。梁军正渡水，阵型未整。你作为晋军裨将，你会建议：",options:[
+{text:"A. 立即出击！趁敌半渡而击之",scores:{Military:5,Pragmatism:2,Survival:-2}},
+{text:"B. 退守高邑，待梁军粮尽自退",scores:{Military:2,Survival:3,Pragmatism:3}},
+{text:"C. 派骑兵骚扰，同时联络成德、义武夹击",scores:{Politics:4,Military:3,Mobilization:2}},
+{text:"D. 夜袭梁军粮草大营",scores:{Military:4,Politics:3,Pragmatism:2}},
+{text:"E. 诈败诱敌，将其引入伏击圈",scores:{Military:4,Politics:3,Kill:2,Survival:-1}}
+]},
+{title:"朱温病重，朱友珪率禁军闯入，使冯廷谔刺死朱温，自立为帝。你作为朱温帐下谋士，事发当晚被软禁于府中，你会：",options:[
+{text:"A. 立即起草贺表，率先拥戴",scores:{Pragmatism:5,Politics:4,Morality:-3,Authority:-3}},
+{text:"B. 闭门不出，称病不朝",scores:{Survival:4,Pragmatism:3,Politics:2}},
+{text:"C. 暗中联络朱友贞，起兵讨逆",scores:{Politics:5,Rebel:4,Morality:2,Survival:-2}},
+{text:"D. 公开上表谴责朱友珪弑父之罪",scores:{Morality:5,Rebel:3,Survival:-4,Kill:-3}},
+{text:"E. 向朱友珪进言，立即处死所有兄弟",scores:{Kill:4,Politics:3,Pragmatism:2,Morality:-3}}
+]},
+{title:"契丹耶律阿保机率三十万大军攻幽州，周德威告急。李存勖正与梁军对峙。你作为李存勖的亲信谋士，你会：",options:[
+{text:"A. 力主分兵救援！幽州不可失",scores:{Military:3,Morality:3,Pragmatism:-2}},
+{text:"B. 建议弃幽州，先灭后梁",scores:{Pragmatism:5,Military:2,Morality:-3}},
+{text:"C. 建议联合吴越等国，请他们牵制后梁",scores:{Politics:5,Mobilization:3,Military:2}},
+{text:"D. 建议固守不战，待契丹粮尽自退",scores:{Military:2,Survival:3,Pragmatism:2}},
+{text:"E. 建议李存勖亲自率轻骑驰援",scores:{Mobilization:4,Military:3,Survival:-3,Authority:2}}
+]},
+{title:"李存勖与梁将贺瑰对峙于魏州。贺瑰深沟高垒，拒不出战，晋军粮草渐尽。有谋士建议散布谣言称汴京大乱。你认为此计如何：",options:[
+{text:"A. 妙计！立即遣细作散布消息",scores:{Politics:4,Military:3,Pragmatism:2}},
+{text:"B. 建议李存勖亲自单挑贺瑰，震慑敌军",scores:{Military:3,Authority:2,Kill:2}},
+{text:"C. 建议撤军回晋阳，待来年再战",scores:{Survival:4,Pragmatism:3,Military:-2}},
+{text:"D. 提议趁夜劫营，焚烧梁军粮草",scores:{Military:4,Kill:2,Rebel:1}},
+{text:"E. 建议李存勖写《讨梁檄文》，传檄天下",scores:{Mobilization:4,Politics:3,Literature:3,Rule:2}}
+]},
+{title:"李存勖灭后梁，梁将王景仁率残部投降。你作为晋军将领，旧友多死于此人之手，你会：",options:[
+{text:"A. 力主斩杀！不杀不足以告慰将士",scores:{Kill:5,Morality:2,Pragmatism:-2}},
+{text:"B. 建议接纳投降，但要他处决梁室忠臣作投名状",scores:{Politics:4,Kill:3,Pragmatism:3,Morality:-2}},
+{text:"C. 建议以国士之礼待王景仁",scores:{Mobilization:5,Morality:3,Politics:3,Kill:-2}},
+{text:"D. 表面赞同接纳，私下派人刺杀",scores:{Politics:5,Kill:3,Morality:-3,Pragmatism:2}},
+{text:"E. 建议软禁，不杀也不用",scores:{Survival:3,Pragmatism:3,Politics:2}}
+]},
+{title:"李存勖欲称帝，张承业痛哭：「今大王自帝，是负先王也。老奴请死。」张承业绝食而死。你作为曾受张承业提携之恩的将领，你会：",options:[
+{text:"A. 为张承业之死痛哭，辞官归隐",scores:{Morality:5,Authority:3,Rebel:2,Survival:-3}},
+{text:"B. 敬佩张承业，但继续追随李存勖",scores:{Pragmatism:4,Authority:1,Morality:-1}},
+{text:"C. 向李存勖进言，以高官厚礼安葬张承业",scores:{Politics:4,Pragmatism:3,Mobilization:2}},
+{text:"D. 认为张承业太过迂腐",scores:{Rebel:2,Pragmatism:2,Morality:-2}},
+{text:"E. 暗中联络忠于唐室的将领，准备起兵反对",scores:{Rebel:5,Morality:3,Politics:2,Survival:-4}}
+]},
+{title:"后梁已亡，王彦章被俘。李存勖亲自劝降：「卿若降，当授以节度使。」王彦章仍不从。你作为李存勖的侍卫，你会：",options:[
+{text:"A. 敬佩王彦章忠义，进言放归乡里",scores:{Morality:4,Military:2,Kill:-2}},
+{text:"B. 认为王彦章不识时务，劝李存勖杀之",scores:{Kill:3,Pragmatism:2,Morality:-2}},
+{text:"C. 建议继续劝降，同时扣押其家眷为质",scores:{Politics:4,Pragmatism:2,Morality:-2}},
+{text:"D. 内心被王彦章气节感动，希望自己也能如此",scores:{Morality:3,Authority:3,Military:1}},
+{text:"E. 认为王彦章愚忠，梁朝已亡，活着才能做更多事",scores:{Pragmatism:3,Survival:2,Morality:-1}}
+]},
+{title:"后唐末帝猜忌石敬瑭，石敬瑭被困太原。耶律德光提出条件：割幽云十六州，称臣称子。你作为石敬瑭的心腹，你会：",options:[
+{text:"A. 劝接受一切条件！活下来才有翻盘机会",scores:{Survival:5,Pragmatism:5,Morality:-4,Military:-2}},
+{text:"B. 建议只割部分州郡，尽量减轻骂名",scores:{Politics:4,Pragmatism:3,Morality:-1}},
+{text:"C. 建议宁死不降！不可做千古罪人",scores:{Morality:5,Rebel:3,Survival:-5,Kill:2}},
+{text:"D. 建议假意投降，待站稳脚跟后再图谋",scores:{Politics:5,Pragmatism:4,Rebel:2,Morality:-2}},
+{text:"E. 建议向李从珂请罪，交出兵权",scores:{Authority:4,Morality:2,Survival:2,Rebel:-3}}
+]},
+{title:"后汉隐帝杀郭威全家，郭威起兵复仇。大军渡河，将士扯下黄旗披在郭威身上。你作为郭威的亲信，深知这一切皆有预谋，你会：",options:[
+{text:"A. 第一个跪下高呼万岁，将此戏演到底",scores:{Politics:5,Mobilization:3,Pragmatism:2,Rule:-2}},
+{text:"B. 建议郭威暂时接受，但请辞帝号",scores:{Morality:3,Politics:2,Pragmatism:1,Rule:2}},
+{text:"C. 暗中提醒郭威，此事必须做得像真的兵变",scores:{Politics:4,Pragmatism:3,Morality:-1}},
+{text:"D. 保持沉默，冷眼旁观",scores:{Rebel:2,Authority:-2,Pragmatism:1}},
+{text:"E. 建议处决几名带头闹事的将领",scores:{Kill:3,Authority:3,Morality:2,Politics:-2}}
+]},
+{title:"柴荣北征契丹途中得到木牌，上书「点检做天子」。柴荣改任赵匡胤为殿前都点检。柴荣病逝后，托孤于赵匡胤。你感受到柴荣与赵匡胤之间：",options:[
+{text:"A. 复杂的君臣关系，柴荣既要用他，又防他",scores:{Politics:4,Chemistry:3,Authority:2}},
+{text:"B. 悲剧性的信任，柴荣托孤却不知被夺天下",scores:{Chemistry:4,Morality:2,Literature:2}},
+{text:"C. 认为柴荣太过自信",scores:{Pragmatism:3,Authority:-1,Chemistry:-1}},
+{text:"D. 被「知遇之恩」与「背叛」的戏剧张力吸引",scores:{Chemistry:5,Literature:3,Rebel:1}},
+{text:"E. 认为赵匡胤辜负了柴荣的信任",scores:{Morality:4,Authority:3,Chemistry:-2}}
+]},
+{title:"赵匡胤设宴款待石守信等禁军大将。酒至半酣，赵匡胤叹道将军事为难。你作为在场将领，听懂弦外之音后，你会：",options:[
+{text:"A. 立即跪地，主动请辞军职",scores:{Pragmatism:5,Politics:4,Survival:3,Authority:2}},
+{text:"B. 装糊涂，继续饮酒作乐",scores:{Survival:3,Pragmatism:2,Politics:-1}},
+{text:"C. 直言进谏：「臣等忠心耿耿，绝无二心」",scores:{Authority:3,Morality:2,Politics:-2,Rebel:1}},
+{text:"D. 暗示愿以子为质，换取信任",scores:{Politics:3,Pragmatism:2,Morality:-1}},
+{text:"E. 暗中联络其他将领，商议起兵清君侧",scores:{Rebel:5,Kill:3,Politics:2,Survival:-3}}
+]},
+{title:"赵匡胤驾崩，赵光义继位。朝野议论纷纷，有「烛影斧声」之疑。赵光义即位后立即改元。你作为朝中大臣，在新帝登基大典上，你会：",options:[
+{text:"A. 表现得最为热情，带头山呼万岁",scores:{Pragmatism:4,Politics:3,Survival:2,Morality:-2}},
+{text:"B. 保持中立，静观其变",scores:{Survival:3,Pragmatism:2,Politics:1}},
+{text:"C. 暗中联络赵德昭，愿支持他夺回皇位",scores:{Rebel:4,Morality:2,Politics:2,Survival:-4}},
+{text:"D. 上书请求追查太祖驾崩真相",scores:{Morality:4,Rule:3,Rebel:2,Survival:-3}},
+{text:"E. 向赵光义献策，厚赏太祖旧臣",scores:{Politics:4,Pragmatism:3,Mobilization:2}}
+]},
+{title:"王建受命诛杀陈敬瑗，陈敬瑗遣使求和：「愿以全蜀相让，只求保全身家。」但田令孜密令「斩草除根」。你作为王建心腹，你会建议：",options:[
+{text:"A. 遵命行事，杀了陈敬瑗",scores:{Kill:3,Pragmatism:4,Morality:-3,Politics:2}},
+{text:"B. 接受投降，软禁陈敬瑗而不杀",scores:{Politics:4,Morality:2,Mobilization:2,Pragmatism:2}},
+{text:"C. 表面答应，暗中联络陈敬瑗共图田令孜",scores:{Rebel:4,Politics:4,Authority:-3,Pragmatism:2}},
+{text:"D. 放陈敬瑗一条生路，逼他散尽家财",scores:{Morality:3,Pragmatism:3,Kill:-2}},
+{text:"E. 借机除掉田令孜，以「为陈敬瑗报仇」为名收编其旧部",scores:{Politics:5,Kill:3,Rebel:3,Authority:-4}}
+]},
+{title:"杨行密攻下扬州，毕师铎据守粮仓拒降。城中已断粮，毕师铎哀求：「愿降，但求活命。」你会：",options:[
+{text:"A. 假意接受投降，待其开城后尽数屠戮",scores:{Kill:4,Pragmatism:2,Morality:-3}},
+{text:"B. 建议接纳投降，开仓赈济百姓",scores:{Mobilization:4,Morality:3,Politics:2}},
+{text:"C. 趁夜潜入，刺杀毕师铎，献首级",scores:{Kill:3,Politics:3,Military:2,Morality:-1}},
+{text:"D. 放走毕师铎，谎称他趁乱突围",scores:{Morality:3,Rebel:3,Survival:1,Authority:-3}},
+{text:"E. 逼迫毕师铎处决亲信作投名状",scores:{Politics:4,Kill:2,Pragmatism:3,Morality:-2}}
+]},
+{title:"契丹耶律德光继位，请求互市。契丹缺铁盐茶，中原缺马。你作为李嗣源的谋士，你会：",options:[
+{text:"A. 同意互市，只出口盐茶，禁止铁器",scores:{Pragmatism:4,Military:2,Politics:2}},
+{text:"B. 坚决反对！契丹乃蛮夷，不可信任",scores:{Military:3,Morality:2,Pragmatism:-2}},
+{text:"C. 派商人为细作，打探契丹虚实",scores:{Politics:5,Pragmatism:3,Rebel:2}},
+{text:"D. 建议趁契丹新丧，发兵攻打",scores:{Military:4,Kill:3,Pragmatism:-1}},
+{text:"E. 以互市为筹码，要求契丹归还汉人百姓",scores:{Morality:4,Mobilization:2,Military:-2}}
+]},
+{title:"罗隐屡试不第，写诗相赠云英：「我未成名君未嫁，可能俱是不如人。」你读到这首诗，感受到：",options:[
+{text:"A. 被罗隐的才华折服，这种讽刺比直接骂更有力量",scores:{Literature:5,Rebel:2,Pragmatism:1}},
+{text:"B. 更同情云英的遭遇",scores:{Morality:3,Literature:2,Mobilization:1}},
+{text:"C. 认为科举不公，罗隐有才无门",scores:{Rebel:3,Rule:-2,Literature:2}},
+{text:"D. 没什么特别感觉",scores:{Pragmatism:2,Survival:1}},
+{text:"E. 被「同是天涯沦落人」之感打动",scores:{Literature:3,Chemistry:2}}
+]},
+{title:"李煜亡国后被囚于汴京，写下《虞美人》：「春花秋月何时了……故国不堪回首月明中。」据说宋太宗因此赐死。你读到这首词，感受到：",options:[
+{text:"A. 为李煜之死惋惜，一个词人就这样被杀",scores:{Morality:4,Literature:3,Rebel:2}},
+{text:"B. 认为李煜不识时务，写这种词不是找死吗",scores:{Pragmatism:4,Authority:2,Literature:-1}},
+{text:"C. 被「故国不堪回首」之情感动，默默传唱",scores:{Literature:5,Rebel:2,Morality:2}},
+{text:"D. 认为即使李煜因词获罪，也死得其所",scores:{Literature:3,Morality:3,Authority:-1}},
+{text:"E. 从中悟出：没有权力，连写词的自由都没有",scores:{Politics:3,Pragmatism:3,Literature:1}}
+]},
+{title:"冯道历仕四朝十君，始终位居宰相。有人问他不以为耻乎？冯道答道：「乱世之中，百姓流离，吾能为百姓做一点实事，便是积德。」你作为冯道的门生，你会：",options:[
+{text:"A. 深以为然！乱世之中，能保全百姓性命便是功德",scores:{Pragmatism:5,Survival:3,Morality:2,Authority:-2}},
+{text:"B. 心中不以为然，但表面赞同",scores:{Politics:3,Survival:2,Morality:-1}},
+{text:"C. 认为冯道是为自己开脱",scores:{Authority:4,Morality:3,Rule:3,Pragmatism:-2}},
+{text:"D. 认为冯道太过圆滑，没有原则",scores:{Morality:3,Rule:2,Pragmatism:-1}},
+{text:"E. 建议冯道至少为前朝守孝三年",scores:{Rule:3,Morality:2,Pragmatism:-1}}
+]},
+{title:"李克用临终对李存勖说：「尔当勉之，勿忘吾志。」李存勖每次出征都将三箭请出，凯旋后送回宗庙。你感受到这对父子之间：",options:[
+{text:"A. 沉重的羁绊，父亲把未竟之志强加于儿子",scores:{Authority:3,Chemistry:4,Pragmatism:1}},
+{text:"B. 深深的信任和期待",scores:{Chemistry:5,Authority:2,Morality:2}},
+{text:"C. 政治表演，李存勖借父亲遗命强化合法性",scores:{Politics:4,Chemistry:-2,Pragmatism:2}},
+{text:"D. 被「父子相托」的情感打动",scores:{Chemistry:4,Literature:2,Morality:1}},
+{text:"E. 认为李存勖应该有自己的志向",scores:{Rebel:3,Authority:-2,Chemistry:-1}}
+]},
+{title:"在一个人命如草芥、强者为尊的乱世，你认为「正义」是：",options:[
+{text:"A. 强者的工具，谁掌握权力谁就能定义正义",scores:{Politics:4,Pragmatism:3,Morality:-2,Rule:-3}},
+{text:"B. 弱者的幻想，活下去就是最大的正义",scores:{Survival:5,Pragmatism:2,Morality:-1}},
+{text:"C. 超越时代的永恒价值，人应当守住底线",scores:{Morality:5,Rule:4,Pragmatism:-2}},
+{text:"D. 多数人的利益，能让最多人活下去的选择",scores:{Mobilization:4,Pragmatism:3,Morality:1}},
+{text:"E. 历史书写者的偏见，胜者为王败者为寇",scores:{Politics:3,Rebel:2,Literature:2}}
+]},
+{title:"如果穿越到五代十国，你内心深处最希望成为：",options:[
+{text:"A. 开国之君，建立自己的王朝",scores:{Rebel:4,Politics:4,Military:3,Kill:2}},
+{text:"B. 一代名将，驰骋沙场，建功立业",scores:{Military:5,Morality:2,Kill:2}},
+{text:"C. 治世能臣，辅佐明主，平定天下",scores:{Mobilization:4,Politics:3,Morality:3}},
+{text:"D. 隐世高人，远离纷争，著书立说",scores:{Survival:5,Literature:4,Rebel:2}},
+{text:"E. 忠臣义士，守住为人臣子的本分",scores:{Authority:5,Morality:4,Rule:3}}
+]},
+{title:"宋太宗灭南唐后，命钱弘俶入朝。群臣建议：「吴越兵精粮足，可一战也。」但钱弘俶深知抵抗只会让百姓生灵涂炭。你作为钱弘俶的谋臣，你会：",options:[
+{text:"A. 劝钱弘俶死守！宁为玉碎，不为瓦全",scores:{Rebel:5,Military:4,Morality:2,Pragmatism:-3}},
+{text:"B. 建议接受现实，主动献土归宋",scores:{Morality:4,Pragmatism:5,Rebel:-3,Authority:2}},
+{text:"C. 建议先试探宋廷态度，争取保留自治权",scores:{Politics:5,Pragmatism:3,Authority:1}},
+{text:"D. 建议率部流亡海外",scores:{Survival:3,Rebel:3,Pragmatism:2,Authority:-2}},
+{text:"E. 建议拖延时间，暗中联络南唐旧部",scores:{Politics:4,Rebel:3,Pragmatism:2,Survival:-2}}
+]}
+];
+
+var characters=[
+{name:"朱温",type:"铁血枭雄",dims:["Kill","Survival","Pragmatism","Rebel"],content:"你是五代十国最典型的「现实主义者」——不是不知道仁义道德，而是清楚地知道，在那个人命如草芥的乱世，心软的人活不过三集。朱温从黄巢起义军叛逃，加入唐朝官军，一路踩着尸骨爬到天下霸主的地位。他杀过恩人，负过义，也建立过后梁。白马驿之祸、弑君、纵容部下——他不是没有能力，而是选择用最黑暗的方式终结了一个时代。",related:"孙儒（90杀伐）、李振（60杀伐+85权谋）",icon:"⚔️"},
+{name:"李克用",type:"沙陀雄狮",dims:["Military","Rebel","Chemistry","Morality"],content:"你是五代十国最能打的人——不是之一，是最能打。李克用的沙陀铁骑，是整个五代初期最可怕的军事力量。他有野心，有能力，有团队，偏偏缺了一点运气。李克用的悲剧在于：他永远在打仗，却永远差一点。他恨朱温入骨，却终其一生未能报仇；他扶持唐朝，却眼睁睁看着唐朝灭亡。他留给儿子的不是江山，是三支箭，和一个可能永远无法完成的复仇名单。",related:"王彦章（85军事+80死节）、李存勖（95军事+90CP）",icon:"🦁"},
+{name:"杨行密",type:"江左仁主",dims:["Survival","Mobilization","Morality","Rule"],content:"你是五代十国里难得的「好人」——不是软弱的好，是有底线的、聪明的好。杨行密从一个底层农民做到吴国王，靠的不是杀伐果断，而是审时度势和民心所向。在一个人人争相称帝的乱世，杨行密始终没有迈出那一步——不是因为没有实力，而是因为还有所不为。他告诉我们：乱世之中，有一种勇气叫做「有所不为」。",related:"钱弘俶（85生存+75道德）、郭威（85生存+75道德）",icon:"🌿"},
+{name:"唐昭宗",type:"末世悲歌",dims:["Authority","Rule","Morality","Survival"],content:"你是整个五代十国最令人心痛的角色——一个想把事情做好、却完全没有能力做好的皇帝。唐昭宗不是昏君，他真心想让唐朝重新伟大。他诛杀宦官，整顿朝纲，讨伐藩镇——每一件事都是对的，每一件事都失败了。他失败的原因很简单：他以为皇帝靠理想就能当，却不知道在军阀横行的时代，没有枪杆子的皇帝，连自己的命都保不住。最终，他死在自己曾经信任的朱温手里，年仅三十八岁。",related:"郑畋（95权威+90道德）、张承业（90权威+85道德）",icon:"📜"},
+{name:"王建",type:"蜀地之王",dims:["Survival","Politics","Military","Kill"],content:"你是五代十国的「老江湖」——从底层一步步爬上来，见过所有的人心险恶，也学会了所有的人情世故。王建早年是个盐贩子，后来投军，最后割据蜀地建立前蜀。他不是一个好人，但在他的治下，蜀地百姓确实过了几十年的安稳日子。他知道什么时候该狠，什么时候该忍，什么时候该装傻。这是乱世里最实用的生存智慧。",related:"石敬瑭（80生存+95实用）、赵匡胤（90生存+90实用）",icon:"👑"},
+{name:"李存勖",type:"戏台帝王",dims:["Military","Chemistry","Literature","Authority"],content:"你是五代十国最耀眼、也最令人唏嘘的人物——一个军事天才，一个戏剧爱好者，一个把父亲遗愿背负一生的悲剧英雄。李存勖三箭复仇的故事，是整个五代最燃的篇章，也是最深的诅咒。他完成了父亲的三个遗愿，却在成功后迅速腐化，沉迷戏曲，宠信伶人，最终死于一碗蛋炒饭。他的故事告诉我们：复仇可以是动力，但不该是人生的全部。",related:"李克用（95军事+85CP）、柴荣（85军事+50CP）",icon:"🎭"},
+{name:"石敬瑭",type:"儿皇帝",dims:["Pragmatism","Survival","Politics","Morality"],content:"你是五代十国名声最臭的人——「儿皇帝」、「卖国贼」，这些标签跟了你一千多年。石敬瑭把幽云十六州割给契丹，让中原失去了天然的北方屏障，从此宋朝在军事上始终处于被动。但如果你是石敬瑭，面对必死的困局，你会怎么做？他选择活下来，代价是千古骂名。这是懦弱，还是另一种勇气？",related:"赵光义（85权谋+80实用）、冯道（95生存+90实用）",icon:"🎪"},
+{name:"郭威",type:"黄旗天子",dims:["Politics","Survival","Pragmatism","Morality"],content:"你是五代十国最「正常」的开国皇帝——不是最英明的，但是最像人的那个。郭威从底层小兵做到后周皇帝，靠的是过人的军事能力和政治手腕，也靠的是那份难得的民心。他是「黄袍加身」的发明者。他的军变是被逼出来的——后汉隐帝杀了他全家，他才起兵复仇。在道德和生存之间，郭威选择了生存，然后尽量让自己不要变成彻底的坏人。",related:"赵匡胤（90权谋+90实用）、杨行密（90生存+70规则）",icon:"🏛️"},
+{name:"柴荣",type:"壮志未酬",dims:["Military","Mobilization","Morality","Politics"],content:"你是五代十国最被低估的人物——如果不是英年早逝，中国历史的走向可能会完全不同。柴荣接手的是一个破烂摊子，用了五年时间整顿军队，发展经济、整饬吏治，让后周成为五代最强的政权。他北伐契丹，一路高歌猛进，却在关键时刻病倒。临终前，他把年仅七岁的儿子和整个帝国，托付给了那个他既信任又防范的人——赵匡胤。",related:"赵匡胤（90动员+90权威）、郑畋（70动员+95权威）",icon:"⚔️"},
+{name:"赵匡胤",type:"杯酒江山",dims:["Politics","Survival","Pragmatism","Mobilization"],content:"你是五代十国最后的赢家——不是最能打的那个，但一定是最会做人的那个。赵匡胤用一杯酒，优雅地拿走了功臣们的兵权，完成了中国历史上最「和平」的改朝换代。他是武将出身，却用文治结束了武人乱政的循环。他知道枪杆子的危险，所以他选择了把枪杆子收起来。这不是软弱，是清醒。",related:"郭威（80权谋+85生存）、石敬瑭（70权谋+95实用）",icon:"🍶"},
+{name:"赵光义",type:"烛影疑云",dims:["Authority","Politics","Rule","Pragmatism"],content:"你是五代十国最神秘的人物——不是因为你的能力，而是因为那个夜晚到底发生了什么，至今仍是历史悬案。「烛影斧声」，四个字承载了千年的猜测。无论真相如何，赵光义继位后的表现是合格的——他继续统一战争，重视文教，试图证明自己配得上这个皇位。他的问题不是能力，而是得位不正带来的心理阴影。",related:"石敬瑭（70权谋+95实用）、赵匡胤（90权谋+90实用）",icon:"🕯️"},
+{name:"冯道",type:"不倒老臣",dims:["Survival","Pragmatism","Politics","Literature"],content:"你是五代十国最有争议的人物——历仕四朝十君，始终位居宰相。冯道被骂了一千多年的「墙头草」、「没有骨气」，但他同时也是那个时代最致力于减少杀戮，保护百姓的人。他说：「忠于一姓，那是太平盛世才讲究的事。乱世之中，百姓流离，吾能为百姓做一点实事，便是积德。」这话对不对？见仁见智。",related:"石敬瑭（50杀伐+95实用）、赵光义（85权谋+80实用）",icon:"📚"},
+{name:"敬翔",type:"谋己之才",dims:["Politics","Survival","Rule","Chemistry"],content:"你是五代十国最顶尖的谋士之一——朱温的首席智囊，几乎所有重大决策背后都有敬翔的影子。他是那种「我不出手则已，出手必有所中」的人物。但敬翔有一个致命的弱点：他对朱温过于忠诚，以至于在朱温死后，拒绝为朱友珪效力，最终自缢身亡。",related:"李振（85权谋+80实用）、张承业（70权谋+85权威）",icon:"🧠"},
+{name:"王彦章",type:"铁枪不死",dims:["Military","Kill","Authority","Morality"],content:"你是五代十国的「关二哥」——武艺高强，忠义无双，最后从容赴死。王彦章的故事是整个五代最悲壮的篇章之一：被俘之后，李存勖亲自劝降，许以高官厚禄，他只有一句话：「彦章武人，不知降字。」一个「不知降字」，道尽了武人的全部骄傲。在这个「识时务者为俊杰」成为主流的时代，你的「不识时务」是一种奢侈的勇气。",related:"张承业（90权威+85道德）、李克用（95军事+85CP）",icon:"🔫"},
+{name:"李煜",type:"词魂亡国",dims:["Literature","Chemistry","Morality","Survival"],content:"你是中国历史上最著名的亡国之君，也可能是文学史上最有才华的皇帝之一。李煜的词，温柔、细腻、哀伤，是整个五代文学的最高峰——但词写得再好，也救不了南唐。他不是一个好皇帝，甚至不是一个有权力欲的人。他只想在自己的小楼里，写写词，听听曲，和心爱的人在一起。但命运偏偏把他推上了帝位，然后在他毫无准备的时候，把一切夺走。",related:"罗隐（95文艺+75道德）、高骈（80文艺+30生存）",icon:"📝"},
+{name:"黄巢",type:"均平之梦",dims:["Rebel","Mobilization","Kill","Literature"],content:"你是唐末最震撼的存在——一个屡试不第的文人，振臂一呼，写下了「他年我若为青帝，报与桃花一处开」，然后真的拉起了一支队伍，差点推翻了整个唐朝。黄巢的意义不只是造反本身，更在于他提出了「均平」的口号——在门阀士族垄断一切的唐朝晚期，「均贫富、等贵贱」这六个字，点燃了无数人的希望。",related:"孙儒（90杀伐+70反叛）、皮日休（90文艺+70道德）",icon:"🔥"},
+{name:"郑畋",type:"凤翔忠魂",dims:["Authority","Morality","Rule","Mobilization"],content:"你是唐朝最后的忠臣之一——凤翔节度使郑畋，在黄巢攻入长安后，第一个站出来起兵勤王。他联络各镇，歃血为盟，硬是在唐朝大厦将倾之时，撑起了一根柱子。郑畋的能力和道德都无可挑剔，但唐朝的灭亡不是一个人能挽回的。他的忠义是黑暗中的一束光，但那束光最终没能照亮唐朝的未来。",related:"唐昭宗（85权威+80道德）、张承业（90权威+85道德）",icon:"🛡️"},
+{name:"高骈",type:"淮南暮云",dims:["Literature","Military","Pragmatism","Survival"],content:"你是唐代末年最复杂的人物之一——高骈出身名门，武将世家，能带兵打仗，也能写诗填词。他的诗写得好，军事才能也出众，曾多次击败南诏和黄巢。但高骈的晚年是一个悲剧——他沉迷道教修仙，宠信术士，拒绝出兵救援朝廷，最终被部下囚禁。在他身上，才华和昏聩、清醒和糊涂，奇怪地混合在一起。",related:"李煜（95文艺+5军事）、罗隐（95文艺+50实用）",icon:"🌙"},
+{name:"孙儒",type:"乱世蝗虫",dims:["Kill","Rebel","Pragmatism","Morality"],content:"你是唐末最残暴的军阀之一——孙儒以杀人为乐，纵横江淮之间，所到之处寸草不生。他的军队以「食用人肉」闻名，是中国历史上最黑暗的片段之一。孙儒没有任何道德底线，也不假装有。他是一个彻底的「现实主义者」——在这个意义上，他确实是成功的。但成功的代价是数万人的生命和一个永远不会翻身的历史骂名。",related:"朱温（95杀伐+90实用）、黄巢（85杀伐+95反叛）",icon:"🦗"},
+{name:"罗隐",type:"蜂蝶翩翩",dims:["Literature","Morality","Rebel","Pragmatism"],content:"你是唐末最毒舌的诗人——罗隐的诗，骂人不带脏字，讽刺直入骨髓。「今朝有酒今朝醉」、「任汝纷纷营不休，尘埃还有飞扬意」——他的才华和愤世嫉俗一样出名。但罗隐的另一面是深沉的温柔。他写过无数同情百姓疾苦的作品。他的毒舌背后，是一颗被科举伤害过、被世道辜负过、却依然没有彻底麻木的心。",related:"皮日休（90文艺+70道德）、李煜（95文艺+55道德）",icon:"🦋"},
+{name:"皮日休",type:"笔刀文人",dims:["Literature","Morality","Rebel","Survival"],content:"你是唐代最后一批有骨气的文人之一——皮日休参加过黄巢的起义军，是少数用行动实践自己理想的文人。他写过《忧赋》、《河间歌诗》，文风犀利，直指社会黑暗。关于皮日休的结局，历史上说法不一——有说他被黄巢所杀，有说他后来隐居山林。但无论如何，他是一个把自己的人生押在了理想上的人。",related:"黄巢（40权谋+95文艺）、罗隐（95文艺+75道德）",icon:"✒️"},
+{name:"李振",type:"浊流清士",dims:["Politics","Kill","Pragmatism","Morality"],content:"你是五代十国最典型的「反派谋士」——李振为朱温出谋划策，亲手参与了白马驿之祸，屠杀唐朝忠臣三十余人。那句「此辈自谓清流，宜投之黄河，使为浊流」，就是他的手笔。但李振又不是纯粹的坏人。他有自己的政治抱负，有对朱温的忠诚。他的悲剧在于，他把才华用在了错误的方向上。",related:"敬翔（95权谋+70生存）、朱温（95杀伐+90实用）",icon:"🌊"},
+{name:"张承业",type:"忠宦遗恨",dims:["Authority","Morality","Rule","Chemistry"],content:"你是五代十国最令人泪目的忠臣——张承业是宦官，却比大多数士大夫更有骨气。他受李克用遗命，誓死效忠唐朝，看着李存勖一步步走向称帝，却始终不肯背叛自己的诺言。当李存勖宣布称帝的那一刻，张承业知道自己的信仰崩塌了。他选择了最激烈的方式——绝食而死——来守住一个他明知已经不可能守住的理想。",related:"王彦章（80权威+75道德）、郑畋（95权威+90道德）",icon:"🙏"},
+{name:"钱弘俶",type:"吴越归宋",dims:["Pragmatism","Survival","Morality","Authority"],content:"你是五代十国最「识时务」的国主——钱弘俶在宋太宗灭南唐后，选择主动献土归宋。吴越国和平并入北宋，江南百姓免于战火，钱氏家族也在宋朝得到了极高的礼遇。钱弘俶的选择和石敬瑭有相似之处——都是为了保全自己/家族/百姓，选择了屈服于更强大的力量。但不同的是，钱弘俶的屈服换来的是和平。",related:"杨行密（90生存+65道德）、冯道（95生存+90实用）",icon:"💎"},
+{name:"普通士人",type:"乱世浮沉",dims:["Survival","Morality","Rule","Pragmatism"],content:"你是五代十国最「普通」的大多数——不是朱温那样的枭雄，不是黄巢那样的叛逆，也不是李煜那样的词人。你是无数在乱世中挣扎求存的普通读书人。你有才华，但科举是一场不公平的游戏；你有理想，但乱世不给你实现的机会；你想忠于某个政权，但那个政权三年就换了一个名字。你能做的，只是随波逐流，尽量不失本心，在夹缝中活下来。",related:"冯道（95生存+90实用）、罗隐（95文艺+75道德）",icon:"📜"}
+];
+
+// State
+var curQ=0;
+var answers=[];
+var scores={Kill:0,Military:0,Politics:0,Authority:0,Mobilization:0,Rule:0,Rebel:0,Survival:0,Morality:0,Pragmatism:0,Literature:0,Chemistry:0};
+var dimNames={Kill:"杀伐决断",Military:"军事进取",Politics:"政治权谋",Authority:"权威服从",Mobilization:"社会动员",Rule:"规则尊重",Rebel:"反叛精神",Survival:"生存能力",Morality:"道德底线",Pragmatism:"实用主义",Literature:"文艺感知",Chemistry:"CP张力"};
+
+// Render functions
+function renderStart(){
+    document.getElementById("app").innerHTML=`
+        <div class="card fade">
             <div class="header"><h1>🏛️ 五代十国生存体验</h1><p>测测你在乱世能活成谁</p></div>
             <div class="intro">
                 <p>五代十国（907-979），中国历史上最混乱的时代之一。</p>
@@ -45,69 +298,48 @@
             </div>
             <button class="btn" id="startBtn">开始测试 →</button>
         </div>
-        <div id="questionPage" class="card hidden">
-            <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
-            <div class="q-num" id="questionNum">第 1 / 30 题</div>
-            <div class="q-title" id="questionTitle"></div>
-            <div id="options"></div>
-            <button class="btn" id="nextBtn" disabled>下一题 →</button>
-        </div>
-        <div id="resultPage" class="card hidden">
-            <div class="r-header">
-                <div class="r-title">你的维度特征</div>
-                <div class="dims" id="resultDimensions"></div>
-                <div class="r-name" id="resultName"></div>
-            </div>
-            <div class="r-content" id="resultContent"></div>
-            <button class="btn" id="restartBtn">重新测试</button>
-        </div>
-    </div>
-<script>
-var questions=[{title:"乾符五年，黄巢率军转战各地，宣称"天补均平"，要均贫富、等贵贱。你作为布衣，家乡遭旱灾，父母饿死。黄巢人马即将到来，宣称"开仓赈济、杀尽豪强"。你会：",options:[{text:"A. 立即加入！不反没有活路，宁可战死讨公道",scores:{Rebel:5,Mobilization:3,Morality:2,Survival:1}},{text:"B. 同情黄巢但认为不对，逃往他处",scores:{Survival:4,Morality:1,Rebel:-2}},{text:"C. 向豪强告密，换取粮食",scores:{Kill:3,Pragmatism:2,Morality:-3}},{text:"D. 组织乡民自保，不投任何一方",scores:{Mobilization:4,Survival:3,Pragmatism:2,Rebel:-1}},{text:"E. 认为黄巢也会鱼肉百姓，隐忍等待",scores:{Pragmatism:3,Morality:1,Rebel:-1}}]},{title:"黄巢攻入长安，僖宗逃往成都。凤翔节度使郑畋歃血为盟，誓死勤王。你作为帐下小将，你会：",options:[{text:"A. 第一个响应，誓死追随",scores:{Authority:5,Military:3,Morality:3,Rebel:-2}},{text:"B. 敬佩但认为时机未到，先巩固凤翔",scores:{Military:3,Pragmatism:3,Authority:1}},{text:"C. 认为唐室气数已尽，劝郑畋拥兵自重",scores:{Rebel:4,Pragmatism:3,Authority:-3}},{text:"D. 暗中联络黄巢，愿投降换富贵",scores:{Kill:3,Rebel:3,Morality:-4,Survival:2}},{text:"E. 建议上表立太子监国，联络各藩镇共讨",scores:{Politics:4,Mobilization:3,Rule:2}}]},{title:"黄巢败亡于泰山狼虎谷。其外甥林言劝黄巢自刎。你作为黄巢帐下最后的亲兵，目睹这一幕，你会：",options:[{text:"A. 趁他不备刺杀，取首级投降",scores:{Kill:4,Survival:4,Morality:-4,Rebel:-3}},{text:"B. 护在黄巢身前，与林言对峙",scores:{Morality:3,Survival:-4,Military:2,Authority:2}},{text:"C. 跪地痛哭，劝黄巢自刎以全名节",scores:{Morality:4,Survival:-3,Rebel:2,Kill:2}},{text:"D. 趁乱逃走，既不背叛也不陪他送死",scores:{Survival:5,Morality:-1,Rebel:1}},{text:"E. 提议护送黄巢突围",scores:{Military:3,Survival:2,Morality:2,Pragmatism:-2}}]},{title:"李克用被困邢州，粮草断绝。你作为帐中小校，看管俘虏十人。李克用传令："尔等自行处置俘虏。"面对这十名俘虏，你会：",options:[{text:"A. 毫不犹豫斩杀分食",scores:{Kill:5,Survival:4,Morality:-4,Military:2}},{text:"B. 只杀半数，留半数作为后备粮",scores:{Politics:3,Pragmatism:3,Kill:3,Morality:-2}},{text:"C. 只杀两人儆众，其余放走",scores:{Morality:3,Rule:2,Rebel:2,Military:-2}},{text:"D. 偷偷放走所有俘虏",scores:{Morality:5,Survival:-3,Rebel:3,Kill:-3}},{text:"E. 向李克用进言，借粮而非杀俘",scores:{Politics:4,Mobilization:2,Pragmatism:2,Morality:2}}]},{title:"杨行密据扬州，城内粮尽，米价飞涨。你作为扬州百姓，家中已无隔夜之粮，你会：",options:[{text:"A. 组织饥民冲击富户粮仓",scores:{Rebel:4,Mobilization:3,Survival:3,Rule:-3}},{text:"B. 向杨行密请愿，先赈济百姓",scores:{Mobilization:3,Morality:2,Pragmatism:-1}},{text:"C. 建议向周边借粮，来年加倍奉还",scores:{Politics:3,Pragmatism:3,Rule:2}},{text:"D. 为生存，将自己卖为奴婢",scores:{Survival:4,Pragmatism:2,Rebel:-2}},{text:"E. 暗中联络富户，做内应换取粮食",scores:{Politics:3,Survival:2,Morality:-2}}]},{title:"钱镠欲扩建杭州城，需征发民夫十万。时值农忙。你作为杭州百姓，家有五亩薄田，你会：",options:[{text:"A. 主动报名筑城，"国若不在，家何存"",scores:{Mobilization:5,Military:2,Morality:2,Survival:1}},{text:"B. 建议只征无地游民，有田者继续耕种",scores:{Politics:3,Pragmatism:3,Mobilization:1}},{text:"C. 偷偷逃亡，保全自家田地",scores:{Survival:4,Rebel:2,Mobilization:-3}},{text:"D. 组织乡民请愿，延后筑城",scores:{Mobilization:3,Rule:2,Pragmatism:1}},{text:"E. 建议以工代赈，给民夫发钱粮",scores:{Politics:4,Mobilization:3,Pragmatism:2}}]},{title:"朱温已控制唐廷。谋士李振进言："此辈自谓清流，宜投之黄河，使为浊流！"一夜杀尽清流。你作为朱温帐下谋士，面对这场屠杀，你会：",options:[{text:"A. 进言附和，这些清流该杀",scores:{Kill:5,Rebel:2,Morality:-3,Pragmatism:3}},{text:"B. 沉默旁观，明哲保身",scores:{Survival:4,Authority:2,Morality:-1}},{text:"C. 冒险进言，劝只诛首恶",scores:{Morality:3,Politics:2,Survival:-2}},{text:"D. 借故离营，内心已萌去意",scores:{Morality:2,Rebel:2,Survival:1,Authority:-3}},{text:"E. 暗中通知裴枢等人逃走",scores:{Morality:4,Rebel:3,Survival:-4,Pragmatism:-2}}]},{title:"李克用病危，以箭授李存勖："梁，吾仇也……此三者，吾遗恨也。与尔三矢，尔其无忘乃父之志！"你作为李存勖的伴读，亲眼见证这一幕，你对这三支箭的看法是：",options:[{text:"A. 必须遵从！完成这三件大事",scores:{Authority:5,Military:3,Morality:2,Rebel:-3}},{text:"B. 先王遗命重要，但时移世易，不必拘泥",scores:{Pragmatism:4,Authority:1,Rule:-1}},{text:"C. 表面遵从，暗中积蓄实力",scores:{Politics:4,Pragmatism:3,Military:1}},{text:"D. 认为李克用不该把恩怨强加于儿子",scores:{Rebel:4,Authority:-3,Morality:1}},{text:"E. 将三箭供于宗庙，作为激励将士的象征",scores:{Mobilization:3,Pragmatism:2,Authority:1}}]},{title:"后梁大将王景仁率八万精兵攻赵，晋王李存勖率三万驰援。梁军正渡水，阵型未整。你作为晋军裨将，你会建议：",options:[{text:"A. 立即出击！趁敌半渡而击之",scores:{Military:5,Pragmatism:2,Survival:-2}},{text:"B. 退守高邑，待梁军粮尽自退",scores:{Military:2,Survival:3,Pragmatism:3}},{text:"C. 派骑兵骚扰，同时联络成德、义武夹击",scores:{Politics:4,Military:3,Mobilization:2}},{text:"D. 夜袭梁军粮草大营",scores:{Military:4,Politics:3,Pragmatism:2}},{text:"E. 诈败诱敌，将其引入伏击圈",scores:{Military:4,Politics:3,Kill:2,Survival:-1}}]},{title:"朱温病重，朱友珪率禁军闯入，使冯廷谔刺死朱温，自立为帝。你作为朱温帐下谋士，事发当晚被软禁于府中，你会：",options:[{text:"A. 立即起草贺表，率先拥戴",scores:{Pragmatism:5,Politics:4,Morality:-3,Authority:-3}},{text:"B. 闭门不出，称病不朝",scores:{Survival:4,Pragmatism:3,Politics:2}},{text:"C. 暗中联络朱友贞，起兵讨逆",scores:{Politics:5,Rebel:4,Morality:2,Survival:-2}},{text:"D. 公开上表谴责朱友珪弑父之罪",scores:{Morality:5,Rebel:3,Survival:-4,Kill:-3}},{text:"E. 向朱友珪进言，立即处死所有兄弟",scores:{Kill:4,Politics:3,Pragmatism:2,Morality:-3}}]},{title:"契丹耶律阿保机率三十万大军攻幽州，周德威告急。李存勖正与梁军对峙。你作为李存勖的亲信谋士，你会：",options:[{text:"A. 力主分兵救援！幽州不可失",scores:{Military:3,Morality:3,Pragmatism:-2}},{text:"B. 建议弃幽州，先灭后梁",scores:{Pragmatism:5,Military:2,Morality:-3}},{text:"C. 建议联合吴越等国，请他们牵制后梁",scores:{Politics:5,Mobilization:3,Military:2}},{text:"D. 建议固守不战，待契丹粮尽自退",scores:{Military:2,Survival:3,Pragmatism:2}},{text:"E. 建议李存勖亲自率轻骑驰援",scores:{Mobilization:4,Military:3,Survival:-3,Authority:2}}]},{title:"李存勖与梁将贺瑰对峙于魏州。贺瑰深沟高垒，拒不出战，晋军粮草渐尽。有谋士建议散布谣言称汴京大乱。你认为此计如何：",options:[{text:"A. 妙计！立即遣细作散布消息",scores:{Politics:4,Military:3,Pragmatism:2}},{text:"B. 建议李存勖亲自单挑贺瑰，震慑敌军",scores:{Military:3,Authority:2,Kill:2}},{text:"C. 建议撤军回晋阳，待来年再战",scores:{Survival:4,Pragmatism:3,Military:-2}},{text:"D. 提议趁夜劫营，焚烧梁军粮草",scores:{Military:4,Kill:2,Rebel:1}},{text:"E. 建议李存勖写《讨梁檄文》，传檄天下",scores:{Mobilization:4,Politics:3,Literature:3,Rule:2}}]},{title:"李存勖灭后梁，梁将王景仁率残部投降。你作为晋军将领，旧友多死于此人之手，你会：",options:[{text:"A. 力主斩杀！不杀不足以告慰将士",scores:{Kill:5,Morality:2,Pragmatism:-2}},{text:"B. 建议接纳投降，但要他处决梁室忠臣作投名状",scores:{Politics:4,Kill:3,Pragmatism:3,Morality:-2}},{text:"C. 建议以国士之礼待王景仁",scores:{Mobilization:5,Morality:3,Politics:3,Kill:-2}},{text:"D. 表面赞同接纳，私下派人刺杀",scores:{Politics:5,Kill:3,Morality:-3,Pragmatism:2}},{text:"E. 建议软禁，不杀也不用",scores:{Survival:3,Pragmatism:3,Politics:2}}]},{title:"李存勖欲称帝，张承业痛哭："今大王自帝，是负先王也。老奴请死。"张承业绝食而死。你作为曾受张承业提携之恩的将领，你会：",options:[{text:"A. 为张承业之死痛哭，辞官归隐",scores:{Morality:5,Authority:3,Rebel:2,Survival:-3}},{text:"B. 敬佩张承业，但继续追随李存勖",scores:{Pragmatism:4,Authority:1,Morality:-1}},{text:"C. 向李存勖进言，以高官厚礼安葬张承业",scores:{Politics:4,Pragmatism:3,Mobilization:2}},{text:"D. 认为张承业太过迂腐",scores:{Rebel:2,Pragmatism:2,Morality:-2}},{text:"E. 暗中联络忠于唐室的将领，准备起兵反对",scores:{Rebel:5,Morality:3,Politics:2,Survival:-4}}]},{title:"后梁已亡，王彦章被俘。李存勖亲自劝降："卿若降，当授以节度使。"王彦章仍不从。你作为李存勖的侍卫，你会：",options:[{text:"A. 敬佩王彦章忠义，进言放归乡里",scores:{Morality:4,Military:2,Kill:-2}},{text:"B. 认为王彦章不识时务，劝李存勖杀之",scores:{Kill:3,Pragmatism:2,Morality:-2}},{text:"C. 建议继续劝降，同时扣押其家眷为质",scores:{Politics:4,Pragmatism:2,Morality:-2}},{text:"D. 内心被王彦章气节感动，希望自己也能如此",scores:{Morality:3,Authority:3,Military:1}},{text:"E. 认为王彦章愚忠，梁朝已亡，活着才能做更多事",scores:{Pragmatism:3,Survival:2,Morality:-1}}]},{title:"后唐末帝猜忌石敬瑭，石敬瑭被困太原。耶律德光提出条件：割幽云十六州，称臣称子。你作为石敬瑭的心腹，你会：",options:[{text:"A. 劝接受一切条件！活下来才有翻盘机会",scores:{Survival:5,Pragmatism:5,Morality:-4,Military:-2}},{text:"B. 建议只割部分州郡，尽量减轻骂名",scores:{Politics:4,Pragmatism:3,Morality:-1}},{text:"C. 建议宁死不降！不可做千古罪人",scores:{Morality:5,Rebel:3,Survival:-5,Kill:2}},{text:"D. 建议假意投降，待站稳脚跟后再图谋",scores:{Politics:5,Pragmatism:4,Rebel:2,Morality:-2}},{text:"E. 建议向李从珂请罪，交出兵权",scores:{Authority:4,Morality:2,Survival:2,Rebel:-3}}]},{title:"后汉隐帝杀郭威全家，郭威起兵复仇。大军渡河，将士扯下黄旗披在郭威身上。你作为郭威的亲信，深知这一切皆有预谋，你会：",options:[{text:"A. 第一个跪下高呼万岁，将此戏演到底",scores:{Politics:5,Mobilization:3,Pragmatism:2,Rule:-2}},{text:"B. 建议郭威暂时接受，但请辞帝号",scores:{Morality:3,Politics:2,Pragmatism:1,Rule:2}},{text:"C. 暗中提醒郭威，此事必须做得像真的兵变",scores:{Politics:4,Pragmatism:3,Morality:-1}},{text:"D. 保持沉默，冷眼旁观",scores:{Rebel:2,Authority:-2,Pragmatism:1}},{text:"E. 建议处决几名带头闹事的将领",scores:{Kill:3,Authority:3,Morality:2,Politics:-2}}]},{title:"柴荣北征契丹途中得到木牌，上书"点检做天子"。柴荣改任赵匡胤为殿前都点检。柴荣病逝后，托孤于赵匡胤。你感受到柴荣与赵匡胤之间：",options:[{text:"A. 复杂的君臣关系，柴荣既要用他，又防他",scores:{Politics:4,Chemistry:3,Authority:2}},{text:"B. 悲剧性的信任，柴荣托孤却不知被夺天下",scores:{Chemistry:4,Morality:2,Literature:2}},{text:"C. 认为柴荣太过自信",scores:{Pragmatism:3,Authority:-1,Chemistry:-1}},{text:"D. 被"知遇之恩"与"背叛"的戏剧张力吸引",scores:{Chemistry:5,Literature:3,Rebel:1}},{text:"E. 认为赵匡胤辜负了柴荣的信任",scores:{Morality:4,Authority:3,Chemistry:-2}}]},{title:"赵匡胤设宴款待石守信等禁军大将。酒至半酣，赵匡胤叹道将军事为难。你作为在场将领，听懂弦外之音后，你会：",options:[{text:"A. 立即跪地，主动请辞军职",scores:{Pragmatism:5,Politics:4,Survival:3,Authority:2}},{text:"B. 装糊涂，继续饮酒作乐",scores:{Survival:3,Pragmatism:2,Politics:-1}},{text:"C. 直言进谏："臣等忠心耿耿，绝无二心"",scores:{Authority:3,Morality:2,Politics:-2,Rebel:1}},{text:"D. 暗示愿以子为质，换取信任",scores:{Politics:3,Pragmatism:2,Morality:-1}},{text:"E. 暗中联络其他将领，商议起兵清君侧",scores:{Rebel:5,Kill:3,Politics:2,Survival:-3}}]},{title:"赵匡胤驾崩，赵光义继位。朝野议论纷纷，有"烛影斧声"之疑。赵光义即位后立即改元。你作为朝中大臣，在新帝登基大典上，你会：",options:[{text:"A. 表现得最为热情，带头山呼万岁",scores:{Pragmatism:4,Politics:3,Survival:2,Morality:-2}},{text:"B. 保持中立，静观其变",scores:{Survival:3,Pragmatism:2,Politics:1}},{text:"C. 暗中联络赵德昭，愿支持他夺回皇位",scores:{Rebel:4,Morality:2,Politics:2,Survival:-4}},{text:"D. 上书请求追查太祖驾崩真相",scores:{Morality:4,Rule:3,Rebel:2,Survival:-3}},{text:"E. 向赵光义献策，厚赏太祖旧臣",scores:{Politics:4,Pragmatism:3,Mobilization:2}}]},{title:"王建受命诛杀陈敬瑗，陈敬瑗遣使求和："愿以全蜀相让，只求保全身家。"但田令孜密令"斩草除根"。你作为王建心腹，你会建议：",options:[{text:"A. 遵命行事，杀了陈敬瑗",scores:{Kill:3,Pragmatism:4,Morality:-3,Politics:2}},{text:"B. 接受投降，软禁陈敬瑗而不杀",scores:{Politics:4,Morality:2,Mobilization:2,Pragmatism:2}},{text:"C. 表面答应，暗中联络陈敬瑗共图田令孜",scores:{Rebel:4,Politics:4,Authority:-3,Pragmatism:2}},{text:"D. 放陈敬瑗一条生路，逼他散尽家财",scores:{Morality:3,Pragmatism:3,Kill:-2}},{text:"E. 借机除掉田令孜，以"为陈敬瑗报仇"为名收编其旧部",scores:{Politics:5,Kill:3,Rebel:3,Authority:-4}}]},{title:"杨行密攻下扬州，毕师铎据守粮仓拒降。城中已断粮，毕师铎哀求："愿降，但求活命。"你会：",options:[{text:"A. 假意接受投降，待其开城后尽数屠戮",scores:{Kill:4,Pragmatism:2,Morality:-3}},{text:"B. 建议接纳投降，开仓赈济百姓",scores:{Mobilization:4,Morality:3,Politics:2}},{text:"C. 趁夜潜入，刺杀毕师铎，献首级",scores:{Kill:3,Politics:3,Military:2,Morality:-1}},{text:"D. 放走毕师铎，谎称他趁乱突围",scores:{Morality:3,Rebel:3,Survival:1,Authority:-3}},{text:"E. 逼迫毕师铎处决亲信作投名状",scores:{Politics:4,Kill:2,Pragmatism:3,Morality:-2}}]},{title:"契丹耶律德光继位，请求互市。契丹缺铁盐茶，中原缺马。你作为李嗣源的谋士，你会：",options:[{text:"A. 同意互市，只出口盐茶，禁止铁器",scores:{Pragmatism:4,Military:2,Politics:2}},{text:"B. 坚决反对！契丹乃蛮夷，不可信任",scores:{Military:3,Morality:2,Pragmatism:-2}},{text:"C. 派商人为细作，打探契丹虚实",scores:{Politics:5,Pragmatism:3,Rebel:2}},{text:"D. 建议趁契丹新丧，发兵攻打",scores:{Military:4,Kill:3,Pragmatism:-1}},{text:"E. 以互市为筹码，要求契丹归还汉人百姓",scores:{Morality:4,Mobilization:2,Military:-2}}]},{title:"罗隐屡试不第，写诗相赠云英："我未成名君未嫁，可能俱是不如人。"你读到这首诗，感受到：",options:[{text:"A. 被罗隐的才华折服，这种讽刺比直接骂更有力量",scores:{Literature:5,Rebel:2,Pragmatism:1}},{text:"B. 更同情云英的遭遇",scores:{Morality:3,Literature:2,Mobilization:1}},{text:"C. 认为科举不公，罗隐有才无门",scores:{Rebel:3,Rule:-2,Literature:2}},{text:"D. 没什么特别感觉",scores:{Pragmatism:2,Survival:1}},{text:"E. 被"同是天涯沦落人"之感打动",scores:{Literature:3,Chemistry:2}}]},{title:"李煜亡国后被囚于汴京，写下《虞美人》："春花秋月何时了……故国不堪回首月明中。"据说宋太宗因此赐死。你读到这首词，感受到：",options:[{text:"A. 为李煜之死惋惜，一个词人就这样被杀",scores:{Morality:4,Literature:3,Rebel:2}},{text:"B. 认为李煜不识时务，写这种词不是找死吗",scores:{Pragmatism:4,Authority:2,Literature:-1}},{text:"C. 被"故国不堪回首"之情感动，默默传唱",scores:{Literature:5,Rebel:2,Morality:2}},{text:"D. 认为即使李煜因词获罪，也死得其所",scores:{Literature:3,Morality:3,Authority:-1}},{text:"E. 从中悟出：没有权力，连写词的自由都没有",scores:{Politics:3,Pragmatism:3,Literature:1}}]},{title:"冯道历仕四朝十君，始终位居宰相。有人问他不以为耻乎？冯道答道："乱世之中，百姓流离，吾能为百姓做一点实事，便是积德。"你作为冯道的门生，你会：",options:[{text:"A. 深以为然！乱世之中，能保全百姓性命便是功德",scores:{Pragmatism:5,Survival:3,Morality:2,Authority:-2}},{text:"B. 心中不以为然，但表面赞同",scores:{Politics:3,Survival:2,Morality:-1}},{text:"C. 认为冯道是为自己开脱",scores:{Authority:4,Morality:3,Rule:3,Pragmatism:-2}},{text:"D. 认为冯道太过圆滑，没有原则",scores:{Morality:3,Rule:2,Pragmatism:-1}},{text:"E. 建议冯道至少为前朝守孝三年",scores:{Rule:3,Morality:2,Pragmatism:-1}}]},{title:"李克用临终对李存勖说："尔当勉之，勿忘吾志。"李存勖每次出征都将三箭请出，凯旋后送回宗庙。你感受到这对父子之间：",options:[{text:"A. 沉重的羁绊，父亲把未竟之志强加于儿子",scores:{Authority:3,Chemistry:4,Pragmatism:1}},{text:"B. 深深的信任和期待",scores:{Chemistry:5,Authority:2,Morality:2}},{text:"C. 政治表演，李存勖借父亲遗命强化合法性",scores:{Politics:4,Chemistry:-2,Pragmatism:2}},{text:"D. 被"父子相托"的情感打动",scores:{Chemistry:4,Literature:2,Morality:1}},{text:"E. 认为李存勖应该有自己的志向",scores:{Rebel:3,Authority:-2,Chemistry:-1}}]},{title:"在一个人命如草芥、强者为尊的乱世，你认为"正义"是：",options:[{text:"A. 强者的工具，谁掌握权力谁就能定义正义",scores:{Politics:4,Pragmatism:3,Morality:-2,Rule:-3}},{text:"B. 弱者的幻想，活下去就是最大的正义",scores:{Survival:5,Pragmatism:2,Morality:-1}},{text:"C. 超越时代的永恒价值，人应当守住底线",scores:{Morality:5,Rule:4,Pragmatism:-2}},{text:"D. 多数人的利益，能让最多人活下去的选择",scores:{Mobilization:4,Pragmatism:3,Morality:1}},{text:"E. 历史书写者的偏见，胜者为王败者为寇",scores:{Politics:3,Rebel:2,Literature:2}}]},{title:"如果穿越到五代十国，你内心深处最希望成为：",options:[{text:"A. 开国之君，建立自己的王朝",scores:{Rebel:4,Politics:4,Military:3,Kill:2}},{text:"B. 一代名将，驰骋沙场，建功立业",scores:{Military:5,Morality:2,Kill:2}},{text:"C. 治世能臣，辅佐明主，平定天下",scores:{Mobilization:4,Politics:3,Morality:3}},{text:"D. 隐世高人，远离纷争，著书立说",scores:{Survival:5,Literature:4,Rebel:2}},{text:"E. 忠臣义士，守住为人臣子的本分",scores:{Authority:5,Morality:4,Rule:3}}]},{title:"宋太宗灭南唐后，命钱弘俶入朝。群臣建议："吴越兵精粮足，可一战也。"但钱弘俶深知抵抗只会让百姓生灵涂炭。你作为钱弘俶的谋臣，你会：",options:[{text:"A. 劝钱弘俶死守！宁为玉碎，不为瓦全",scores:{Rebel:5,Military:4,Morality:2,Pragmatism:-3}},{text:"B. 建议接受现实，主动献土归宋",scores:{Morality:4,Pragmatism:5,Rebel:-3,Authority:2}},{text:"C. 建议先试探宋廷态度，争取保留自治权",scores:{Politics:5,Pragmatism:3,Authority:1}},{text:"D. 建议率部流亡海外",scores:{Survival:3,Rebel:3,Pragmatism:2,Authority:-2}},{text:"E. 建议拖延时间，暗中联络南唐旧部",scores:{Politics:4,Rebel:3,Pragmatism:2,Survival:-2}}]}];
-var characters=[{name:"朱温",type:"铁血枭雄",dims:["Kill","Survival","Pragmatism","Rebel"],content:"你是五代十国最典型的"现实主义者"——不是不知道仁义道德，而是清楚地知道，在那个人命如草芥的乱世，心软的人活不过三集。朱温从黄巢起义军叛逃，加入唐朝官军，一路踩着尸骨爬到天下霸主的地位。他杀过恩人，负过义，也建立过后梁。白马驿之祸、弑君、纵容部下——他不是没有能力，而是选择用最黑暗的方式终结了一个时代。",related:"孙儒（90杀伐）、李振（60杀伐+85权谋）",icon:"⚔️"},{name:"李克用",type:"沙陀雄狮",dims:["Military","Rebel","Chemistry","Morality"],content:"你是五代十国最能打的人——不是之一，是最能打。李克用的沙陀铁骑，是整个五代初期最可怕的军事力量。他有野心，有能力，有团队，偏偏缺了一点运气。李克用的悲剧在于：他永远在打仗，却永远差一点。他恨朱温入骨，却终其一生未能报仇；他扶持唐朝，却眼睁睁看着唐朝灭亡。他留给儿子的不是江山，是三支箭，和一个可能永远无法完成的复仇名单。",related:"王彦章（85军事+80死节）、李存勖（95军事+90CP）",icon:"🦁"},{name:"杨行密",type:"江左仁主",dims:["Survival","Mobilization","Morality","Rule"],content:"你是五代十国里难得的"好人"——不是软弱的好，是有底线的、聪明的好。杨行密从一个底层农民做到吴国王，靠的不是杀伐果断，而是审时度势和民心所向。在一个人人争相称帝的乱世，杨行密始终没有迈出那一步——不是因为没有实力，而是因为还有所不为。他告诉我们：乱世之中，有一种勇气叫做"有所不为"。",related:"钱弘俶（85生存+75道德）、郭威（85生存+75道德）",icon:"🌿"},{name:"唐昭宗",type:"末世悲歌",dims:["Authority","Rule","Morality","Survival"],content:"你是整个五代十国最令人心痛的角色——一个想把事情做好、却完全没有能力做好的皇帝。唐昭宗不是昏君，他真心想让唐朝重新伟大。他诛杀宦官，整顿朝纲，讨伐藩镇——每一件事都是对的，每一件事都失败了。他失败的原因很简单：他以为皇帝靠理想就能当，却不知道在军阀横行的时代，没有枪杆子的皇帝，连自己的命都保不住。最终，他死在自己曾经信任的朱温手里，年仅三十八岁。",related:"郑畋（95权威+90道德）、张承业（90权威+85道德）",icon:"📜"},{name:"王建",type:"蜀地之王",dims:["Survival","Politics","Military","Kill"],content:"你是五代十国的"老江湖"——从底层一步步爬上来，见过所有的人心险恶，也学会了所有的人情世故。王建早年是个盐贩子，后来投军，最后割据蜀地建立前蜀。他不是一个好人，但在他的治下，蜀地百姓确实过了几十年的安稳日子。他知道什么时候该狠，什么时候该忍，什么时候该装傻。这是乱世里最实用的生存智慧。",related:"石敬瑭（80生存+95实用）、赵匡胤（90生存+90实用）",icon:"👑"},{name:"李存勖",type:"戏台帝王",dims:["Military","Chemistry","Literature","Authority"],content:"你是五代十国最耀眼、也最令人唏嘘的人物——一个军事天才，一个戏剧爱好者，一个把父亲遗愿背负一生的悲剧英雄。李存勖三箭复仇的故事，是整个五代最燃的篇章，也是最深的诅咒。他完成了父亲的三个遗愿，却在成功后迅速腐化，沉迷戏曲，宠信伶人，最终死于一碗蛋炒饭。他的故事告诉我们：复仇可以是动力，但不该是人生的全部。",related:"李克用（95军事+85CP）、柴荣（85军事+50CP）",icon:"🎭"},{name:"石敬瑭",type:"儿皇帝",dims:["Pragmatism","Survival","Politics","Morality"],content:"你是五代十国名声最臭的人——"儿皇帝"、"卖国贼"，这些标签跟了你一千多年。石敬瑭把幽云十六州割给契丹，让中原失去了天然的北方屏障，从此宋朝在军事上始终处于被动。但如果你是石敬瑭，面对必死的困局，你会怎么做？他选择活下来，代价是千古骂名。这是懦弱，还是另一种勇气？",related:"赵光义（85权谋+80实用）、冯道（95生存+90实用）",icon:"🎪"},{name:"郭威",type:"黄旗天子",dims:["Politics","Survival","Pragmatism","Morality"],content:"你是五代十国最"正常"的开国皇帝——不是最英明的，但是最像人的那个。郭威从底层小兵做到后周皇帝，靠的是过人的军事能力和政治手腕，也靠的是那份难得的民心。他是"黄袍加身"的发明者。他的军变是被逼出来的——后汉隐帝杀了他全家，他才起兵复仇。在道德和生存之间，郭威选择了生存，然后尽量让自己不要变成彻底的坏人。",related:"赵匡胤（90权谋+90实用）、杨行密（90生存+70规则）",icon:"🏛️"},{name:"柴荣",type:"壮志未酬",dims:["Military","Mobilization","Morality","Politics"],content:"你是五代十国最被低估的人物——如果不是英年早逝，中国历史的走向可能会完全不同。柴荣接手的是一个破烂摊子，用了五年时间整顿军队，发展经济、整饬吏治，让后周成为五代最强的政权。他北伐契丹，一路高歌猛进，却在关键时刻病倒。临终前，他把年仅七岁的儿子和整个帝国，托付给了那个他既信任又防范的人——赵匡胤。",related:"赵匡胤（90动员+90权威）、郑畋（70动员+95权威）",icon:"⚔️"},{name:"赵匡胤",type:"杯酒江山",dims:["Politics","Survival","Pragmatism","Mobilization"],content:"你是五代十国最后的赢家——不是最能打的那个，但一定是最会做人的那个。赵匡胤用一杯酒，优雅地拿走了功臣们的兵权，完成了中国历史上最"和平"的改朝换代。他是武将出身，却用文治结束了武人乱政的循环。他知道枪杆子的危险，所以他选择了把枪杆子收起来。这不是软弱，是清醒。",related:"郭威（80权谋+85生存）、石敬瑭（70权谋+95实用）",icon:"🍶"},{name:"赵光义",type:"烛影疑云",dims:["Authority","Politics","Rule","Pragmatism"],content:"你是五代十国最神秘的人物——不是因为你的能力，而是因为那个夜晚到底发生了什么，至今仍是历史悬案。"烛影斧声"，四个字承载了千年的猜测。无论真相如何，赵光义继位后的表现是合格的——他继续统一战争，重视文教，试图证明自己配得上这个皇位。他的问题不是能力，而是得位不正带来的心理阴影。",related:"石敬瑭（70权谋+95实用）、赵匡胤（90权谋+90实用）",icon:"🕯️"},{name:"冯道",type:"不倒老臣",dims:["Survival","Pragmatism","Politics","Literature"],content:"你是五代十国最有争议的人物——历仕四朝十君，始终位居宰相。冯道被骂了一千多年的"墙头草"、"没有骨气"，但他同时也是那个时代最致力于减少杀戮，保护百姓的人。他说："忠于一姓，那是太平盛世才讲究的事。乱世之中，百姓流离，吾能为百姓做一点实事，便是积德。"这话对不对？见仁见智。",related:"石敬瑭（50杀伐+95实用）、赵光义（85权谋+80实用）",icon:"📚"},{name:"敬翔",type:"谋己之才",dims:["Politics","Survival","Rule","Chemistry"],content:"你是五代十国最顶尖的谋士之一——朱温的首席智囊，几乎所有重大决策背后都有敬翔的影子。他是那种"我不出手则已，出手必有所中"的人物。但敬翔有一个致命的弱点：他对朱温过于忠诚，以至于在朱温死后，拒绝为朱友珪效力，最终自缢身亡。",related:"李振（85权谋+80实用）、张承业（70权谋+85权威）",icon:"🧠"},{name:"王彦章",type:"铁枪不死",dims:["Military","Kill","Authority","Morality"],content:"你是五代十国的"关二哥"——武艺高强，忠义无双，最后从容赴死。王彦章的故事是整个五代最悲壮的篇章之一：被俘之后，李存勖亲自劝降，许以高官厚禄，他只有一句话："彦章武人，不知降字。"一个"不知降字"，道尽了武人的全部骄傲。在这个"识时务者为俊杰"成为主流的时代，你的"不识时务"是一种奢侈的勇气。",related:"张承业（90权威+85道德）、李克用（95军事+85CP）",icon:"🔫"},{name:"李煜",type:"词魂亡国",dims:["Literature","Chemistry","Morality","Survival"],content:"你是中国历史上最著名的亡国之君，也可能是文学史上最有才华的皇帝之一。李煜的词，温柔、细腻、哀伤，是整个五代文学的最高峰——但词写得再好，也救不了南唐。他不是一个好皇帝，甚至不是一个有权力欲的人。他只想在自己的小楼里，写写词，听听曲，和心爱的人在一起。但命运偏偏把他推上了帝位，然后在他毫无准备的时候，把一切夺走。",related:"罗隐（95文艺+75道德）、高骈（80文艺+30生存）",icon:"📝"},{name:"黄巢",type:"均平之梦",dims:["Rebel","Mobilization","Kill","Literature"],content:"你是唐末最震撼的存在——一个屡试不第的文人，振臂一呼，写下了"他年我若为青帝，报与桃花一处开"，然后真的拉起了一支队伍，差点推翻了整个唐朝。黄巢的意义不只是造反本身，更在于他提出了"均平"的口号——在门阀士族垄断一切的唐朝晚期，"均贫富、等贵贱"这六个字，点燃了无数人的希望。",related:"孙儒（90杀伐+70反叛）、皮日休（90文艺+70道德）",icon:"🔥"},{name:"郑畋",type:"凤翔忠魂",dims:["Authority","Morality","Rule","Mobilization"],content:"你是唐朝最后的忠臣之一——凤翔节度使郑畋，在黄巢攻入长安后，第一个站出来起兵勤王。他联络各镇，歃血为盟，硬是在唐朝大厦将倾之时，撑起了一根柱子。郑畋的能力和道德都无可挑剔，但唐朝的灭亡不是一个人能挽回的。他的忠义是黑暗中的一束光，但那束光最终没能照亮唐朝的未来。",related:"唐昭宗（85权威+80道德）、张承业（90权威+85道德）",icon:"🛡️"},{name:"高骈",type:"淮南暮云",dims:["Literature","Military","Pragmatism","Survival"],content:"你是唐代末年最复杂的人物之一——高骈出身名门，武将世家，能带兵打仗，也能写诗填词，是那种"明明可以靠武力，却偏偏要靠才华"的人。他的诗写得好，军事才能也出众，曾多次击败南诏和黄巢。但高骈的晚年是一个悲剧——他沉迷道教修仙，宠信术士，拒绝出兵救援朝廷，最终被部下囚禁。",related:"李煜（95文艺+5军事）、罗隐（95文艺+50实用）",icon:"🌙"},{name:"孙儒",type:"乱世蝗虫",dims:["Kill","Rebel","Pragmatism","Morality"],content:"你是唐末最残暴的军阀之一——孙儒以杀人为乐，纵横江淮之间，所到之处寸草不生。他的军队以"食用人肉"闻名，是中国历史上最黑暗的片段之一。孙儒没有任何道德底线，也不假装有。他是一个彻底的"现实主义者"——在这个意义上，他确实是成功的。但成功的代价是数万人的生命和一个永远不会翻身的历史骂名。",related:"朱温（95杀伐+90实用）、黄巢（85杀伐+95反叛）",icon:"🦗"},{name:"罗隐",type:"蜂蝶翩翩",dims:["Literature","Morality","Rebel","Pragmatism"],content:"你是唐末最毒舌的诗人——罗隐的诗，骂人不带脏字，讽刺直入骨髓。"今朝有酒今朝醉"、"任汝纷纷营不休，尘埃还有飞扬意"——他的才华和愤世嫉俗一样出名。但罗隐的另一面是深沉的温柔。他写过无数同情百姓疾苦的作品。他的毒舌背后，是一颗被科举伤害过、被世道辜负过、却依然没有彻底麻木的心。",related:"皮日休（90文艺+70道德）、李煜（95文艺+55道德）",icon:"🦋"},{name:"皮日休",type:"笔刀文人",dims:["Literature","Morality","Rebel","Survival"],content:"你是唐代最后一批有骨气的文人之一——皮日休参加过黄巢的起义军，是少数用行动实践自己理想的文人。他写过《忧赋》、《河间歌诗》，文风犀利，直指社会黑暗。关于皮日休的结局，历史上说法不一——有说他被黄巢所杀，有说他后来隐居山林。但无论如何，他是一个把自己的人生押在了理想上的人。",related:"黄巢（40权谋+95文艺）、罗隐（95文艺+75道德）",icon:"✒️"},{name:"李振",type:"浊流清士",dims:["Politics","Kill","Pragmatism","Morality"],content:"你是五代十国最典型的"反派谋士"——李振为朱温出谋划策，亲手参与了白马驿之祸，屠杀唐朝忠臣三十余人。那句"此辈自谓清流，宜投之黄河，使为浊流"，就是他的手笔。但李振又不是纯粹的坏人。他有自己的政治抱负，有对朱温的忠诚。他的悲剧在于，他把才华用在了错误的方向上。",related:"敬翔（95权谋+70生存）、朱温（95杀伐+90实用）",icon:"🌊"},{name:"张承业",type:"忠宦遗恨",dims:["Authority","Morality","Rule","Chemistry"],content:"你是五代十国最令人泪目的忠臣——张承业是宦官，却比大多数士大夫更有骨气。他受李克用遗命，誓死效忠唐朝，看着李存勖一步步走向称帝，却始终不肯背叛自己的诺言。当李存勖宣布称帝的那一刻，张承业知道自己的信仰崩塌了。他选择了最激烈的方式——绝食而死——来守住一个他明知已经不可能守住的理想。",related:"王彦章（80权威+75道德）、郑畋（95权威+90道德）",icon:"🙏"},{name:"钱弘俶",type:"吴越归宋",dims:["Pragmatism","Survival","Morality","Authority"],content:"你是五代十国最"识时务"的国主——钱弘俶在宋太宗灭南唐后，选择主动献土归宋。吴越国和平并入北宋，江南百姓免于战火，钱氏家族也在宋朝得到了极高的礼遇。钱弘俶的选择和石敬瑭有相似之处——都是为了保全自己/家族/百姓，选择了屈服于更强大的力量。但不同的是，钱弘俶的屈服换来的是和平。",related:"杨行密（90生存+65道德）、冯道（95生存+90实用）",icon:"💎"},{name:"普通士人",type:"乱世浮沉",dims:["Survival","Morality","Rule","Pragmatism"],content:"你是五代十国最"普通"的大多数——不是朱温那样的枭雄，不是黄巢那样的叛逆，也不是李煜那样的词人。你是无数在乱世中挣扎求存的普通读书人。你有才华，但科举是一场不公平的游戏；你有理想，但乱世不给你实现的机会；你想忠于某个政权，但那个政权三年就换了一个名字。你能做的，只是随波逐流，尽量不失本心，在夹缝中活下来。",related:"冯道（95生存+90实用）、罗隐（95文艺+75道德）",icon:"📜"}];
-var curQ=0,answers=[],scores={Kill:0,Military:0,Politics:0,Authority:0,Mobilization:0,Rule:0,Rebel:0,Survival:0,Morality:0,Pragmatism:0,Literature:0,Chemistry:0};
-var dimNames={Kill:"杀伐决断",Military:"军事进取",Politics:"政治权谋",Authority:"权威服从",Mobilization:"社会动员",Rule:"规则尊重",Rebel:"反叛精神",Survival:"生存能力",Morality:"道德底线",Pragmatism:"实用主义",Literature:"文艺感知",Chemistry:"CP张力"};
-document.getElementById("startBtn").onclick=function(){
-    document.getElementById("startPage").classList.add("hidden");
-    document.getElementById("questionPage").classList.remove("hidden");
-    showQ();
-};
-document.getElementById("restartBtn").onclick=function(){
-    curQ=0;answers=[];scores={Kill:0,Military:0,Politics:0,Authority:0,Mobilization:0,Rule:0,Rebel:0,Survival:0,Morality:0,Pragmatism:0,Literature:0,Chemistry:0};
-    document.getElementById("resultPage").classList.add("hidden");
-    document.getElementById("startPage").classList.remove("hidden");
-};
-function showQ(){
+    `;
+    document.getElementById("startBtn").onclick=startTest;
+}
+
+function renderQuestion(){
     var q=questions[curQ];
-    document.getElementById("questionNum").textContent="第 "+(curQ+1)+" / 30 题";
+    var html=`<div class="card">
+        <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="q-num">第 ${curQ+1} / 30 题</div>
+        <div class="q-title">${q.title}</div>
+        <div id="options"></div>
+        <button class="btn" id="nextBtn" ${answers[curQ]===undefined?"disabled":""}>${curQ===29?"查看结果 →":"下一题 →"}</button>
+    </div>`;
+    document.getElementById("app").innerHTML=html;
     document.getElementById("progressFill").style.width=((curQ+1)/30*100)+"%";
-    document.getElementById("questionTitle").textContent=q.title;
-    var opts=document.getElementById("options");
-    opts.innerHTML="";
     q.options.forEach(function(opt,idx){
         var d=document.createElement("div");
-        d.className="opt";
+        d.className="opt"+(answers[curQ]===idx?" sel":"");
         d.textContent=opt.text;
         d.onclick=function(){selOpt(idx);};
-        opts.appendChild(d);
+        document.getElementById("options").appendChild(d);
     });
-    document.getElementById("nextBtn").disabled=true;
-    document.getElementById("nextBtn").textContent=curQ===29?"查看结果 →":"下一题 →";
+    document.getElementById("nextBtn").onclick=nextQuestion;
 }
+
 function selOpt(idx){
-    document.querySelectorAll(".opt").forEach(function(o,i){o.classList.toggle("sel",i===idx);});
-    document.getElementById("nextBtn").disabled=false;
     answers[curQ]=idx;
+    renderQuestion();
 }
-document.getElementById("nextBtn").onclick=function(){
-    if(answers[curQ]===undefined)return;
+
+function nextQuestion(){
     var q=questions[curQ],s=q.options[answers[curQ]].scores;
     Object.keys(s).forEach(function(d){scores[d]=(scores[d]||0)+s[d];});
-    if(curQ<29){curQ++;showQ();}else{showR();}
-};
-function showR(){
-    document.getElementById("questionPage").classList.add("hidden");
-    document.getElementById("resultPage").classList.remove("hidden");
+    if(curQ<29){
+        curQ++;
+        renderQuestion();
+    }else{
+        renderResult();
+    }
+}
+
+function renderResult(){
     var sorted=Object.entries(scores).sort(function(a,b){return b[1]-a[1];});
     var topDims=sorted.slice(0,4).filter(function(d){return d[1]>0;}).map(function(d){return d[0];});
     var topDim=topDims[0]||"Survival";
@@ -115,10 +347,33 @@ function showR(){
     for(var i=0;i<characters.length;i++){
         if(characters[i].dims.indexOf(topDim)>-1){matched=characters[i];break;}
     }
-    document.getElementById("resultDimensions").innerHTML=topDims.map(function(d){return '<span class="dim">'+dimNames[d]+" "+scores[d]+"</span>";}).join("");
-    document.getElementById("resultName").textContent=matched.icon+" "+matched.name+"型 · "+matched.type;
-    document.getElementById("resultContent").innerHTML="<p>"+matched.content+"</p><p style='margin-top:16px;color:#888'>📚 同类人物："+matched.related+"</p>";
+    var dimsHtml=topDims.map(function(d){return '<span class="dim">'+dimNames[d]+" "+scores[d]+"</span>";}).join("");
+    document.getElementById("app").innerHTML=`
+        <div class="card fade">
+            <div class="r-header">
+                <div class="r-title">你的维度特征</div>
+                <div class="dims">${dimsHtml}</div>
+                <div class="r-name">${matched.icon} ${matched.name}型 · ${matched.type}</div>
+            </div>
+            <div class="r-content">
+                <p>${matched.content}</p>
+                <p style="margin-top:16px;color:#888">📚 同类人物：${matched.related}</p>
+            </div>
+            <button class="btn" id="restartBtn">重新测试</button>
+        </div>
+    `;
+    document.getElementById("restartBtn").onclick=function(){
+        curQ=0;answers=[];scores={Kill:0,Military:0,Politics:0,Authority:0,Mobilization:0,Rule:0,Rebel:0,Survival:0,Morality:0,Pragmatism:0,Literature:0,Chemistry:0};
+        renderStart();
+    };
 }
+
+function startTest(){
+    renderQuestion();
+}
+
+// Init
+renderStart();
 </script>
 </body>
 </html>
